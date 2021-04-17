@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}BattingData{% endblock title %}
+
+{% block content %}
+
+<body>
+   
+<form method = "POST">
+    {% csrf_token %} 
+    <select id="batter" class="player-dropdown" name="batter">
+        <option value="1">Liam Otero</option>
+        <option value="2">Reynaldo Gonzalez</option>
+        <option value="3">Michael Johnson</option>
+        <option value="4">Nelson Castillo</option>
+        <option value="5">James Potts</option>
+        <option value="6">Kevin Milone</option>
+        <option value="7">Calvin Diaz</option>
+        <option value="8">Kyle Matthews</option>
+        <option value="9">Jathaniel Nieves</option>
+        <option value="10">Jamal Jenkins</option>
+        <option value="11">Kendrick Smalls</option>
+        <option value="12">Joel Rodriguez</option>
+        <option value="13">Yadiel Lugo</option>
+        <option value="14">Cody Reeds</option>
+        <option value="15">Xavier Colon</option>
+        <option value="16">Andy Smith</option>
+        <option value="17">Carson Rex</option>
+        <option value="18">Jalen Jackson</option>
+        <option value="19">Matthew Cobbs</option>
+        <option value="20">Matt Sampson</option>
+        <option value="21">John Harrison</option>
+        <option value="22">Ronel Rios</option>
+        <option value="23">Jeremy Garcia</option>
+        <option value="24">Esteban Rivera</option>
+        <option value="25">Fred James</option>
+        <option value="26">Robert Santiago</option>
+        <option value="27">Efrain Zuniga</option>
+        <input type = "submit" value="Search" />
+    </select>
+    </form>
+    <hr />
+    <center>
+    <h1>Batting Data</h1>
+    <hr />
+    <table class="table table-bordered table-hover">
+            <tr>
+                <th>Id</th>
+                <th>Player</th>
+                <th>Year</th>
+                <th>Team</th>
+                <th>League</th>
+                <th>G</th>
+                <th>At_Bats</th>
+                <th>Runs</th>
+                <th>Hits</th>
+                <th>2B</th>
+                <th>3B</th>
+                <th>HR</th>
+                <th>RBI</th>
+                <th>SB</th>
+                <th>CS</th>
+                <th>BB</th>
+                <th>SO</th>
+                <th>IBB</th>
+                <th>HBP</th>
+                <th>SH</th>
+                <th>SF</th>
+                <th>GIDP</th>
+                <th>Avg</th>
+            </tr>
+            {% if batting %}
+            <tr>
+                <td>{{batting.id}}</td>
+                <td>{{batting.player_name}}</td>
+                <td>2020</td>
+                <td>{{batting.team_name}}</td>
+                <td>{{batting.league}}</td>
+                <td>{{batting.g}}</td>
+                <td>{{batting.at_bats}}</td>
+                <td>{{batting.runs}}</td>
+                <td>{{batting.hits}}</td>
+                <td>{{batting.number_2b}}</td>
+                <td>{{batting.number_3b}}</td>
+                <td>{{batting.hr}}</td>
+                <td>{{batting.rbi}}</td>
+                <td>{{batting.sb}}</td>
+                <td>{{batting.cs}}</td>
+                <td>{{batting.bb}}</td>
+                <td>{{batting.so}}</td>
+                <td>{{batting.ibb}}</td>
+                <td>{{batting.hbp}}</td>
+                <td>{{batting.sh}}</td>
+                <td>{{batting.sf}}</td>
+                <td>{{batting.gidp}}</td>
+                <td>{{batting.avg}}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </center>
+
+   
+</body>
+{% endblock content %}

@@ -1,0 +1,174 @@
+{% extends 'base.html' %} 
+
+{% block title %}PitchingData{% endblock title %}
+
+{% block content %}
+<body>
+  
+   <form method="POST">
+   {% csrf_token %}
+   <select id="playerselect" name="pitcher" class="player-dropdown">
+        <option value="1">Joel Rodriguez</option>
+        <option value="2">Yadiel Lugo</option>
+        <option value="3">Cody Reeds</option>
+        <option value="4" >Xavier Colon</option>
+        <option value="5" >Andy Smith</option>
+        <option value="6" >Carson Rex</option>
+        <option value="7" >Jalen Jackson</option>
+        <option value="8" >Matthew Cobbs</option>
+        <option value="9" >Matt Sampson</option>
+        <option value="10" >John Harrison</option>
+        <option value="11" >Robert Santiago</option>
+        <option value="12" >Efrain Zuniga</option>
+        <input type="submit" value="Search"/>
+        
+    </select> 
+   
+    </form>
+    
+    <hr />
+    <center>
+        <h1>Pitching Data</h1>
+        <hr />
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Year</th>
+            <th>Name</th>
+            <th>Team</th>
+            <th>League</th>
+            <th>W</th>
+            <th>L</th>
+            <th>G</th>
+            <th>GS</th>
+            <th>ShutOuts</th>
+            <th>Saves</th>
+            <th>Outs Pitched</th>
+            <th>H</th>
+            <th>ER</th>
+            <th>HR</th>
+            <th>BB</th>
+            <th>Strikeouts</th>
+            <th>Baopp</th>
+            <th>ERA</th>
+            <th>IBB</th>
+            <th>HBP</th>
+            <th>BK</th>
+            <th>R</th>
+        
+        </tr>
+        
+        
+        {% if pitching %}
+        <tr>
+            <td>{{pitching.id}}</td>
+            <td>2020</td>
+            <td>{{pitching.player_name}}</td>
+            <td>{{pitching.team_name}}</td>
+            <td>{{pitching.league}}</td>
+            <td>{{pitching.w}}</td>
+            <td>{{pitching.l}}</td>
+            <td>{{pitching.g}}</td>
+            <td>{{pitching.gs}}</td>
+            <td>{{pitching.shutouts}}</td>
+            <td>{{pitching.saves}}</td>
+            <td>{{pitching.outs_pitched}}</td>
+            <td>{{pitching.h}}</td>
+            <td>{{pitching.er}}</td>
+            <td>{{pitching.hr}}</td>
+            <td>{{pitching.bb}}</td>
+            <td>{{pitching.strikeouts}}</td>
+            <td>{{pitching.baopp}}</td>
+            <td>{{pitching.era}}</td>
+            <td>{{pitching.ibb}}</td>
+            <td>{{pitching.hbp}}</td>
+            <td>{{pitching.bk}}</td>
+            <td>{{pitching.r}}</td>
+            
+        </tr>
+        
+       {% endif %}
+       
+    </table>
+    </center>
+</body>    
+
+{% endblock content %}
+
+<!--
+<select class="player-dropdown">
+    <option value="pitcher">Joel Rodriguez</option>
+    <option value="pitcher">Yadiel Lugo</option>
+    <option value="pitcher">Cody Reeds</option>
+    <option value="pitcher">Xavier Colon</option>
+    <option value="pitcher">Andy Smith</option>
+    <option value="pitcher">Carson Rex</option>
+    <option value="pitcher">Jalen Jackson</option>
+    <option value="pitcher">Matthew Cobbs</option>
+    <option value="pitcher">Matt Sampson</option>
+    <option value="pitcher">John Harrison</option>
+    <option value="pitcher">Robert Santiago</option>
+    <option value="pitcher">Efrain Zuniga</option>
+</select> -->
+
+
+<!--
+<h1>Pitching Data</h1>
+<hr />
+<table class="table table-bordered table-hover">
+<tr>
+    <th>Id</th>
+    <th>Year</th>
+    <th>Name</th>
+    <th>Team</th>
+    <th>League</th>
+    <th>W</th>
+    <th>L</th>
+    <th>G</th>
+    <th>GS</th>
+    <th>ShutOuts</th>
+    <th>Saves</th>
+    <th>Outs Pitched</th>
+    <th>H</th>
+    <th>ER</th>
+    <th>HR</th>
+    <th>BB</th>
+    <th>Strikeouts</th>
+    <th>Baopp</th>
+    <th>ERA</th>
+    <th>IBB</th>
+    <th>HBP</th>
+    <th>BK</th>
+    <th>R</th>
+
+</tr>
+{% for player in pitching %} 
+<tr>
+    <td>{{player.id}}</td>
+    <td>2020</td>
+    <td>{{player.player_name}}</td>
+    <td>{{player.team_name}}</td>
+    <td>{{player.league}}</td>
+    <td>{{player.w}}</td>
+    <td>{{player.l}}</td>
+    <td>{{player.g}}</td>
+    <td>{{player.gs}}</td>
+    <td>{{player.shutouts}}</td>
+    <td>{{player.saves}}</td>
+    <td>{{player.outs_pitched}}</td>
+    <td>{{player.h}}</td>
+    <td>{{player.er}}</td>
+    <td>{{player.hr}}</td>
+    <td>{{player.bb}}</td>
+    <td>{{player.strikeouts}}</td>
+    <td>{{player.baopp}}</td>
+    <td>{{player.era}}</td>
+    <td>{{player.ibb}}</td>
+    <td>{{player.hbp}}</td>
+    <td>{{player.bk}}</td>
+    <td>{{player.r}}</td>
+</tr>
+{% endfor %}
+</table> -->
+

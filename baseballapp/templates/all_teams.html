@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+
+{% block title %}All Teams{% endblock title %}
+
+{% block content %}
+<body>
+    <center>
+        <h1>All Teams</h1>
+        <hr />
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>Id</th>
+                <th>School Name</th>
+                <th>Team Name</th>
+                <th>City</th>
+                <th>State</th>
+            </tr>
+            {% for result in baseballteams %} 
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.school_name}}</td>
+                <td>{{result.team_name}}</td>
+                <td>{{result.city}}</td>
+                <td>{{result.state}}</td>
+                <td>
+                    <button class="btn btn-info" type="update">Update</button>
+                </td>
+                <td>
+                    <form method = "delete">
+                        <input type="hidden" value="{{pitching.id}}" name="delete-id">
+                        <button class="btn btn-danger" type="Delete">Delete</button>
+                    </form>
+                </td>
+                
+
+            </tr>
+            {% endfor %}
+        </table>
+
+    </center>
+</body>
+{% endblock content %}

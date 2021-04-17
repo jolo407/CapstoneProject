@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+
+{% block title %}Ball Player{% endblock title %}
+
+{% block content %}
+<body>
+<center>
+        <h1>Ball Player</h1>
+        <hr />
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>Id</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Birth Country</th>
+                <th>Birth State</th>
+                <th>Birth City</th>
+                <th>Number</th>
+                <th>Position</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Bats</th>
+                <th>Throws</th>
+            </tr>
+            {% for result in data %} 
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.name_last}}</td>
+                <td>{{result.name_first}}</td>
+                <td>{{result.birth_country}}</td>
+                <td>{{result.birth_state}}</td>
+                <td>{{result.birth_city}}</td>
+                <td>{{result.number}}</td>
+                <td>{{result.position}}</td>
+                <td>{{result.weight}}</td>
+                <td>{{result.height}}</td>
+                <td>{{result.bats}}</td>
+                <td>{{result.throws}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </center>
+</body>
+{% endblock content %}

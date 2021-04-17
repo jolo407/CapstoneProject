@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+AllBaseball
+{% endblock title %} 
+
+{% block content %}
+<br />
+<div class="jumbotron">
+    <h1 class="display-4">AllBaseball</h1>
+    <p class="lead">Baseball Analytics App</p>
+    <p class="lead">
+    <a class="btn btn-primary btn-lg" id="register" href="{% url 'register' %}">Register</a>
+    <a class="btn btn-secondary btn-lg" id="login" href="{% url 'login' %}">Log In</a>
+    </p>
+</div>
+
+{% endblock content %}
+

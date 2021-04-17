@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+    {% block title %}Teams Data{% endblock title %}
+
+{% block content %}
+<body>
+
+        
+        <form method = "POST">
+            {% csrf_token %} 
+            <select id="teamselect" name="teamsdata" class="team-dropdown">
+                <option value="1">Raiders</option>
+                <option value="2">Chargers</option>
+                <option value="3">Cougars</option>
+                <option value="4">Terriers</option>
+                <option value="5">Wolves</option>
+                <option value="6">Lions</option>
+                <option value="7">Tigers</option>
+                <option value="8">Dragons</option>
+                <option value="9">Chiefs</option>
+                <option value="10">Yellow Jackets</option>
+                <option value="11">Sharks</option>
+                <option value="12">Titans</option>
+                <option value="13">Spartans</option>
+                <option value="14">Hawks</option>
+                <option value="15">Bulls</option>
+                <option value="16">Longhorns</option>
+                <option value="17">Gryphons</option>
+                <input type ="submit" value="Search"/>
+                </select>
+                </form>
+                <hr />
+                <center>
+                    <h1>Teams Data</h1>
+        <hr />
+            <table class="table table-bordered table-hover">
+            <tr>
+                <th>Id</th>
+                <th>Year</th>
+                <th>League</th>
+                <th>Team</th>
+                <th>G</th>
+                <th>HG</th>
+                <th>W</th>
+                <th>L</th>
+                <th>R</th>
+                <th>At_Bats</th>
+                <th>H</th>
+                <th>2B</th>
+                <th>3B</th>
+                <th>HR</th>
+                <th>BB</th>
+                <th>SO</th>
+                <th>SB</th>
+                <th>CS</th>
+                <th>RA</th>
+                <th>ERA</th>
+            </tr>
+            {% if teamsdata %} 
+            <tr>
+                <td>{{teamsdata.id}}</td>
+                <td>2020</td>
+                <td>{{teamsdata.league}}</td>
+                <td>{{teamsdata.team}}</td>
+                <td>{{teamsdata.g}}</td>
+                <td>{{teamsdata.home_games}}</td>
+                <td>{{teamsdata.w}}</td>
+                <td>{{teamsdata.l}}</td>
+                <td>{{teamsdata.r}}</td>
+                <td>{{teamsdata.at_bats}}</td>
+                <td>{{teamsdata.h}}</td>
+                <td>{{teamsdata.number_2b}}</td>
+                <td>{{teamsdata.number_3b}}</td>
+                <td>{{teamsdata.hr}}</td>
+                <td>{{teamsdata.bb}}</td>
+                <td>{{teamsdata.so}}</td>
+                <td>{{teamsdata.sb}}</td>
+                <td>{{teamsdata.cs}}</td>
+                <td>{{teamsdata.ra}}</td>
+                <td>{{teamsdata.era}}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </center>
+
+
+
+</body>
+{% endblock content %}
+
+
