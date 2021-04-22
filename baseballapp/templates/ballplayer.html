@@ -3,12 +3,13 @@
 {% block title %}Ball Player{% endblock title %}
 
 {% block content %}
-<body>
+<body class="ballplayer">
 <center>
-        <h1>Ball Player</h1>
+    <div class="ballplayer_table">
+        <h1 style="font-family: 'Original Surfer', cursive";>Ball Player</h1>
         <hr />
         <table class="table table-bordered table-hover">
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <th>Id</th>
                 <th>Last Name</th>
                 <th>First Name</th>
@@ -23,7 +24,7 @@
                 <th>Throws</th>
             </tr>
             {% for result in data %} 
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <td>{{result.id}}</td>
                 <td>{{result.name_last}}</td>
                 <td>{{result.name_first}}</td>
@@ -39,6 +40,8 @@
             </tr>
             {% endfor %}
         </table>
+
+    </div>
 
     </center>
 </body>

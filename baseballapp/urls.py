@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 from . import views
 from register import views as r
 from allbaseball import views as h
-from .views import TeamsDataChartView
+from .views import TeamsDataChartView, DeleteTeam, DeletePlayer
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,4 +37,10 @@ urlpatterns = [
     path('register/', r.register, name='register'),
     path('', include('django.contrib.auth.urls')),
     path('chartview/', TeamsDataChartView.as_view(), name='chartview'),
+    path('about/', views.about, name='about'),
+    path('help/', views.help, name='help'),
+    path('<int:id>/updateteam/', views.UpdateTeam, name='update_team'),
+    path('<int:id>/updateplayer/', views.UpdatePlayer, name='update_player'),
+    path('<int:pk>/deleteteam/', DeleteTeam.as_view(), name='delete_team'),
+    path('<int:pk>/deleteplayer/', DeletePlayer.as_view(), name='delete_player'),
 ]

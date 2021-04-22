@@ -3,12 +3,12 @@
 {% block title %}All Players{% endblock title %}
 
 {% block content %}
-<body>
+<body class="allplayers">
 <center>
-        <h1>All Players</h1>
+        <h1 style="font-family: 'Original Surfer', cursive; color: white;">All Players</h1>
         <hr />
         <table class="table table-bordered table-hover">
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <th>Id</th>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -17,7 +17,7 @@
                 <th>Team</th>
             </tr>
             {% for result in players %} 
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <td>{{result.id}}</td>
                 <td>{{result.first_name}}</td>
                 <td>{{result.last_name}}</td>
@@ -25,13 +25,26 @@
                 <td>{{result.player_position}}</td>
                 <td>{{result.team_name}}</td>
                 <td>
-                    <button class="btn btn-info" type="update">Update</button>
+                    <a type="button" class="btn btn-secondary btn-sm" href="{% url 'update_player' result.id %}">Update</a>
+                    <a type="button" class="btn btn-danger btn-sm" href="{% url 'delete_player' result.id %}">Delete</a>
+                </td>
+                    <!--<form action="" method="post">
+                        {% csrf_token %} 
+                        <input type="hidden" name="player_id" value="{{result.id}}"/>
+                        <button type="submit" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-trash">
+                            </span>
+                        </button>
+                    </form> -->
+
+
+                    <!--<button class="btn btn-info" type="update">Update</button>
                 </td>
                 <td>
-                    <form method = "delete">
-                        <input type="hidden" value="{{pitching.id}}" name="delete-id">
-                        <button class="btn btn-danger" type="Delete">Delete</button>
-                    </form>
+                    <form action=""  method="GET">
+                        <input type="hidden" value="{{result.id}}" name="delete-id">
+                        <button class="btn btn-danger" name="DeleteButton" type="Delete">Delete</button>
+                    </form>-->
                 </td>
             </tr>
             {% endfor %}

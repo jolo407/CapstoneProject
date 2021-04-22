@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<body>
+<body class="battingdata">
    
 <form method = "POST">
     {% csrf_token %} 
@@ -37,40 +37,41 @@
         <option value="26">Robert Santiago</option>
         <option value="27">Efrain Zuniga</option>
         <input type = "submit" value="Search" />
+        <h6 class="text-muted" style="font-family: 'Original Surfer', cursive;">Select a player from dropdown</h6>
     </select>
     </form>
     <hr />
     <center>
-    <h1>Batting Data</h1>
+    <h1 style="font-family: 'Original Surfer', cursive";>Batting Data</h1>
     <hr />
     <table class="table table-bordered table-hover">
             <tr>
-                <th>Id</th>
-                <th>Player</th>
-                <th>Year</th>
-                <th>Team</th>
-                <th>League</th>
-                <th>G</th>
-                <th>At_Bats</th>
-                <th>Runs</th>
-                <th>Hits</th>
-                <th>2B</th>
-                <th>3B</th>
-                <th>HR</th>
-                <th>RBI</th>
-                <th>SB</th>
-                <th>CS</th>
-                <th>BB</th>
-                <th>SO</th>
-                <th>IBB</th>
-                <th>HBP</th>
-                <th>SH</th>
-                <th>SF</th>
-                <th>GIDP</th>
-                <th>Avg</th>
+                <th style="font-family: 'Original Surfer', cursive;">Id</th>
+                <th style="font-family: 'Original Surfer', cursive";>Player</th>
+                <th style="font-family: 'Original Surfer', cursive";>Year</th>
+                <th style="font-family: 'Original Surfer', cursive";>Team</th>
+                <th style="font-family: 'Original Surfer', cursive";>League</th>
+                <th style="font-family: 'Original Surfer', cursive";>G</th>
+                <th style="font-family: 'Original Surfer', cursive";>At_Bats</th>
+                <th style="font-family: 'Original Surfer', cursive";>Runs</th>
+                <th style="font-family: 'Original Surfer', cursive";>Hits</th>
+                <th style="font-family: 'Original Surfer', cursive";>2B</th>
+                <th style="font-family: 'Original Surfer', cursive";>3B</th>
+                <th style="font-family: 'Original Surfer', cursive";>HR</th>
+                <th style="font-family: 'Original Surfer', cursive";>RBI</th>
+                <th style="font-family: 'Original Surfer', cursive";>SB</th>
+                <th style="font-family: 'Original Surfer', cursive";>CS</th>
+                <th style="font-family: 'Original Surfer', cursive";>BB</th>
+                <th style="font-family: 'Original Surfer', cursive";>SO</th>
+                <th style="font-family: 'Original Surfer', cursive";>IBB</th>
+                <th style="font-family: 'Original Surfer', cursive";>HBP</th>
+                <th style="font-family: 'Original Surfer', cursive";>SH</th>
+                <th style="font-family: 'Original Surfer', cursive";>SF</th>
+                <th style="font-family: 'Original Surfer', cursive";>GIDP</th>
+                <th style="font-family: 'Original Surfer', cursive";>Avg</th>
             </tr>
             {% if batting %}
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive";>
                 <td>{{batting.id}}</td>
                 <td>{{batting.player_name}}</td>
                 <td>2020</td>

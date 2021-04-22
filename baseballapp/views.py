@@ -1,7 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponsePermanentRedirect
 from baseballapp.models import BallPlayer, Batting, Pitching, add_team, Players, Teams
 from .forms import AddTeamForm, AddPlayerForm
+from django.views import generic
+from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
+
 
 
 
@@ -45,7 +49,6 @@ def PitchingData(request):
     else:
         return render(request, 'pitchingdata.html')
 
-
 def TeamsData(request):
     if request.method == "POST":
         teamsselect = request.POST.get('teamsdata', False)
@@ -78,14 +81,6 @@ def add_teams(response):
     
     return render(response, "add_team.html", {"form":form})
 
-def update(request, id):
-    player = Players.objects.get(id=id)
-    form = AddPlayerForm(request.POST, instance = player)
-    if form.is_valid():
-        form.save()
-        return redirect('allplayers/')
-    return render(request, 'update.html', {'player': player})
-
 
 def add_player(response):
     if response.method == "POST":
@@ -106,5 +101,58 @@ class TeamsDataChartView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["qs"] = Teams.objects.all()
         return context
+
+def about(request):
+    return render(request, 'about.html')
+
+def help(request):
+    return render(request, 'help.html')
+
+def UpdateTeam(request, id):
+    obj = get_object_or_404(add_team, id=id)
+    form = AddTeamForm(request.POST or None, instance=obj)
+        
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    #return redirect('add_team')
+    
+    context={'form': form}
+    return render(request, 'teamupdate.html', context)
+
+def UpdatePlayer(request, id):
+    obj = get_object_or_404(Players, id=id)
+    form = AddPlayerForm(request.POST or None, instance=obj)
+        
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    #return redirect('add_team')
+    
+    context={'form': form}
+    return render(request, 'player_update.html', context)
+
+class DeleteTeam(DeleteView):
+    model = add_team
+    template_name = 'delete_team.html'
+    success_url = reverse_lazy('teams') 
+
+class DeletePlayer(DeleteView):
+    model = Players
+    template_name = 'delete_player.html'
+    success_url = reverse_lazy('allplayers')
+
+#def DeleteTeam(request, id):
+    #obj = get_object_or_404('add_team', id=id)
+
+   # context={'form': form}
+   # return render(request, 'delete_player.html', context)
+    
+
+  #  obj.delete()
+
+   # return redirect('add_team')
+
+
 
 

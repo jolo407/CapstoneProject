@@ -4,9 +4,11 @@
 {% load crispy_forms_tags %} 
 
 {% block content %} 
-    <form method="POST" class="form-group">
+    <form method="POST" class="form-group" id="addteamform">
+        <h1 style="font-family: 'Original Surfer', cursive";>Add Team</h1>
+        <hr />
         {% csrf_token %} 
         {{ form|crispy }}
-        <button type="submit" class="btn btn-success">Add Team</button>
+        <button type="submit" class="btn btn-primary" style="font-family: 'Original Surfer', cursive";>Add Team</button>
     </form>
     {% endblock %}

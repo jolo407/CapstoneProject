@@ -4,9 +4,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %} 
-    <form method="POST" class="form-group">
+    <form method="POST" class="form-group" id="addplayerform">
+        <h1 style="font-family: 'Original Surfer', cursive";>Add Player</h1>
+        <hr />
         {% csrf_token %} 
         {{ form|crispy }}
-        <button type="submit" class="btn btn-success">Add Player</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem;font-family: 'Original Surfer', cursive;">Add Player</button>
     </form>
     {% endblock %}

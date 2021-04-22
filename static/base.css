@@ -1,0 +1,147 @@
+.home-body{
+    background-color: gray;
+}
+.jumbotron h1{
+    text-align: center;
+    color: lightblue;
+}
+
+.jumbotron p{
+    text-align: center;
+    color:lightskyblue;
+}
+
+.register-loginbtn{
+    text-align: center;
+    size: 2px
+}
+
+.jumbotron img{
+    background-color: gray;
+    width: 100%;
+    padding: 2rem;
+}
+
+#login{
+    margin-right: 1rem;
+}
+
+#signup{
+    margin-right: 1rem;
+}
+
+.form-group{
+    text-align: center;
+    background-color: navy;
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.form-group ul{
+    list-style-type: none;
+
+}
+
+#loginform{
+    background-color: teal;
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#loginform a:hover{
+    color: yellow;
+}
+
+#addteamform{
+    background-color: yellowgreen;
+    color: navy;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#addteamform button{
+    margin-top: 1rem;
+}
+
+#addplayerform{
+    background-color: rgb(66, 3, 33);
+    color: lightgray;
+}
+
+.ballplayer_table{
+    background-color: rgb(142, 142, 230);
+    color: turquoise;
+}
+
+.ballplayer tr{
+    color: turquoise;
+}
+
+.aboutus{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.help{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.battingdata{
+    background-color:aqua;
+}
+
+.pitchingdata{
+    background-color: burlywood;
+}
+
+.pitchingdata tr{
+    color: green;
+}
+
+.teamsdata{
+    background-color: silver;
+}
+
+.teamsdata tr{
+    color: navy;
+}
+
+.allteams{
+    background-color: rgb(216, 231, 179);
+}
+
+.allplayers {
+    background-color: rgb(57, 57, 128)
+}
+
+.allplayers tr{
+    color: white;
+}
+
+.allplayers td:hover{
+    color: yellow;
+}
+
+#updateteamform {
+    background-color: rgb(216, 231, 179);
+    color: black;
+}
+
+.deleteteamform {
+    background-color: rgb(216, 231, 179);
+    color: black;
+}
+
+#updateplayerform{
+    background-color: rgb(57, 57, 128)
+}
+
+.deleteplayerform{
+    background-color: rgb(57, 57, 128);
+    color: white;
+}
+

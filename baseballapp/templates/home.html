@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} 
 AllBaseball
@@ -6,14 +7,17 @@ AllBaseball
 
 {% block content %}
 <br />
-<div class="jumbotron">
-    <h1 class="display-4">AllBaseball</h1>
-    <p class="lead">Baseball Analytics App</p>
+<body class="home-body">
+<div class="jumbotron" >
+    <h1 class="display-4" style="font-family: 'Original Surfer', cursive";>AllBaseball</h1>
+    <p class="lead" style="font-family: 'Architects Daughter', cursive";>Baseball Analytics App</p>
+    <img src="/static/img/baseball-field-background.jpeg" class="rounded mx-auto d-block" alt="baseballfield">
     <p class="lead">
-    <a class="btn btn-primary btn-lg" id="register" href="{% url 'register' %}">Register</a>
-    <a class="btn btn-secondary btn-lg" id="login" href="{% url 'login' %}">Log In</a>
+<div class="register-loginbtn">
+    <a type="button" class="btn btn-info btn-lg" href="{% url 'register' %}" style="font-family: 'Original Surfer', cursive;">Register</a>
+    <a type="button" class="btn btn-success btn-lg" href="{% url 'login' %}" style="font-family: 'Original Surfer', cursive;">Log In</a>
     </p>
+</div> 
 </div>
-
 {% endblock content %}
-
+</body> 

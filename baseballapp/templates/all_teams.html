@@ -3,12 +3,12 @@
 {% block title %}All Teams{% endblock title %}
 
 {% block content %}
-<body>
+<body class="allteams">
     <center>
-        <h1>All Teams</h1>
+        <h1 style="font-family: 'Original Surfer', cursive";>All Teams</h1>
         <hr />
         <table class="table table-bordered table-hover">
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <th>Id</th>
                 <th>School Name</th>
                 <th>Team Name</th>
@@ -16,25 +16,21 @@
                 <th>State</th>
             </tr>
             {% for result in baseballteams %} 
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <td>{{result.id}}</td>
                 <td>{{result.school_name}}</td>
                 <td>{{result.team_name}}</td>
                 <td>{{result.city}}</td>
                 <td>{{result.state}}</td>
                 <td>
-                    <button class="btn btn-info" type="update">Update</button>
-                </td>
                 <td>
-                    <form method = "delete">
-                        <input type="hidden" value="{{pitching.id}}" name="delete-id">
-                        <button class="btn btn-danger" type="Delete">Delete</button>
-                    </form>
+                    <a type="button" class="btn btn-secondary btn-sm" href="{% url 'update_team' result.id %}">Update</a>
+                    <a type="button" class="btn btn-danger btn-sm" href="{% url 'delete_team' result.id %}">Delete</a>
                 </td>
-                
-
-            </tr>
+            </tr>    
             {% endfor %}
+            
+            
         </table>
 
     </center>

@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1>
      <!-- semantic UI -->
      <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
      <!--Chart js-->
@@ -17,6 +17,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/6da635e2db.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'base.css' %}" rel="stylesheet">
     <title>{% block title %}AllBaseballApp{% endblock title %}</title>
 </head>
@@ -34,33 +36,31 @@
       </li> -->
 
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">AllBaseball</a>
+        <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Original Surfer', cursive";>AllBaseball</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'addteam' %}">Add Team</a>
+              <a class="nav-link active" href="{% url 'addteam' %}" style="font-family: 'Original Surfer', cursive";>Add Team</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'Original Surfer', cursive";>
                 Dropdown
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="{% url 'addplayer' %}">Add Player</a></li>
-                <li><a class="dropdown-item" href="{% url 'players' %}">Players Info</a></li>
-                <li><a class="dropdown-item" href="{% url 'batting' %}">Batting Data</a></li>
-                <li><a class="dropdown-item" href="{% url 'pitchers' %}">Pitchers Data</a></li>
-                <li><a class="dropdown-item" href="{% url 'teamsdata' %}">Teams Data</a></li>
-                <li><a class="dropdown-item" href="{% url 'teams' %}">All Teams</a></li>
-                <li><a class="dropdown-item" href="{% url 'allplayers' %}">All Players</a></li>
+                <li><a class="dropdown-item" href="{% url 'addplayer' %}" style="font-family: 'Original Surfer', cursive";>Add Player</a></li>
+                <li><a class="dropdown-item" href="{% url 'players' %}" style="font-family: 'Original Surfer', cursive";>Players Info</a></li>
+                <li><a class="dropdown-item" href="{% url 'batting' %}" style="font-family: 'Original Surfer', cursive";>Batting Data</a></li>
+                <li><a class="dropdown-item" href="{% url 'pitchers' %}" style="font-family: 'Original Surfer', cursive";>Pitchers Data</a></li>
+                <li><a class="dropdown-item" href="{% url 'teamsdata' %}" style="font-family: 'Original Surfer', cursive";>Teams Data</a></li>
+                <li><a class="dropdown-item" href="{% url 'teams' %}" style="font-family: 'Original Surfer', cursive";>All Teams</a></li>
+                <li><a class="dropdown-item" href="{% url 'allplayers' %}" style="font-family: 'Original Surfer', cursive";>All Players</a></li>
+                <li><a class="dropdown-item" href="{% url 'chartview' %}" style="font-family: 'Original Surfer', cursive";>Chart View</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">About AllBaseball</a></li>
-                <li><a class="dropdown-item" href="#">Help</a></li>
+                <li><a class="dropdown-item" href="{% url 'about' %}" style="font-family: 'Original Surfer', cursive";>About AllBaseball</a></li>
+                <li><a class="dropdown-item" href="{% url 'help' %}" style="font-family: 'Original Surfer', cursive";>Help</a></li>
               </ul>
             </li>
           </ul>
@@ -71,12 +71,16 @@
   <div class="nav-right">
     <li class="d-flex">
       <a class="nav-link d-flex" href="#" tabindex="-1" aria-disabled="true">Hi {{ user.username }}!</a>
-      <a class="btn btn-success" id="logout" href="{% url 'logout' %}">Log Out</a>
+      <a class="btn btn-success" id="logout" href="{% url 'logout' %}" style="font-family: 'Original Surfer', cursive";>Log Out</a>
     </li>
 {% else %}
     <li class="d-flex">
-      <a class="btn btn-success" id="login" href="{% url 'login' %}">Log In</a>
-      <a class="btn btn-info" id="signup" href="{% url 'register' %}">Register</a>
+    <a type="button" class="btn btn-success btn-lg" id= "login" href="{% url 'login' %}" style="font-family: 'Original Surfer', cursive";>Login</a>
+    <a type="button" class="btn btn-info btn-lg" id="signup" href="{% url 'register' %}" style="font-family: 'Original Surfer', cursive";>Register</a>
+    
+
+      <!--<a type="button" class="btn btn-success btn-sm" id="login" href="{% url 'login' %}">Log In</a>
+      <a type="button" class="btn btn-info btn-sm" id="signup" href="{% url 'register' %}">Register</a> -->
     </li>
   </div>
 {% endif %}

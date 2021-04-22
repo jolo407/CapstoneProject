@@ -3,36 +3,34 @@
 {% block title %}PitchingData{% endblock title %}
 
 {% block content %}
-<body>
-  
-   <form method="POST">
+<body class="pitchingdata">
+  <form method="POST">
    {% csrf_token %}
-   <select id="playerselect" name="pitcher" class="player-dropdown">
-        <option value="1">Joel Rodriguez</option>
-        <option value="2">Yadiel Lugo</option>
-        <option value="3">Cody Reeds</option>
-        <option value="4" >Xavier Colon</option>
-        <option value="5" >Andy Smith</option>
-        <option value="6" >Carson Rex</option>
-        <option value="7" >Jalen Jackson</option>
-        <option value="8" >Matthew Cobbs</option>
-        <option value="9" >Matt Sampson</option>
-        <option value="10" >John Harrison</option>
-        <option value="11" >Robert Santiago</option>
-        <option value="12" >Efrain Zuniga</option>
-        <input type="submit" value="Search"/>
-        
-    </select> 
-   
-    </form>
+   <select id="playerselect" name="pitcher" class="player-dropdown" style="font-family: 'Original Surfer', cursive;">
+    <option value="1">Joel Rodriguez</option>
+    <option value="2">Yadiel Lugo</option>
+    <option value="3">Cody Reeds</option>
+    <option value="4" >Xavier Colon</option>
+    <option value="5" >Andy Smith</option>
+    <option value="6" >Carson Rex</option>
+    <option value="7" >Jalen Jackson</option>
+    <option value="8" >Matthew Cobbs</option>
+    <option value="9" >Matt Sampson</option>
+    <option value="10" >John Harrison</option>
+    <option value="11" >Robert Santiago</option>
+    <option value="12" >Efrain Zuniga</option>
+    <input style="font-family: 'Original Surfer', cursive;" type="submit"></input>
+    <h6 class="text-muted" style="font-family: 'Original Surfer', cursive;">Select a player from dropdown</h6>
+    </select>
+</form>
     
     <hr />
     <center>
-        <h1>Pitching Data</h1>
+        <h1 style="color: green; font-family: 'Original Surfer', cursive;">Pitching Data</h1>
         <hr />
 
     <table class="table table-bordered table-hover">
-        <tr>
+        <tr style="font-family: 'Original Surfer', cursive;">
             <th>Id</th>
             <th>Year</th>
             <th>Name</th>
@@ -61,7 +59,7 @@
         
         
         {% if pitching %}
-        <tr>
+        <tr style="font-family: 'Original Surfer', cursive;">
             <td>{{pitching.id}}</td>
             <td>2020</td>
             <td>{{pitching.player_name}}</td>

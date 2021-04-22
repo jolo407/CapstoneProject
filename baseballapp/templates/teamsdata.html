@@ -3,12 +3,12 @@
     {% block title %}Teams Data{% endblock title %}
 
 {% block content %}
-<body>
+<body class="teamsdata">
 
         
         <form method = "POST">
             {% csrf_token %} 
-            <select id="teamselect" name="teamsdata" class="team-dropdown">
+            <select id="teamselect" name="teamsdata" class="team-dropdown" style="font-family: 'Original Surfer', cursive;">
                 <option value="1">Raiders</option>
                 <option value="2">Chargers</option>
                 <option value="3">Cougars</option>
@@ -27,14 +27,15 @@
                 <option value="16">Longhorns</option>
                 <option value="17">Gryphons</option>
                 <input type ="submit" value="Search"/>
+                <h6 class="text-muted" style="font-family: 'Original Surfer', cursive;">Select a player from dropdown</h6>
                 </select>
                 </form>
                 <hr />
                 <center>
-                    <h1>Teams Data</h1>
+                    <h1 style="color: navy; font-family: 'Original Surfer', cursive;">Teams Data</h1>
         <hr />
             <table class="table table-bordered table-hover">
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <th>Id</th>
                 <th>Year</th>
                 <th>League</th>
@@ -57,7 +58,7 @@
                 <th>ERA</th>
             </tr>
             {% if teamsdata %} 
-            <tr>
+            <tr style="font-family: 'Original Surfer', cursive;">
                 <td>{{teamsdata.id}}</td>
                 <td>2020</td>
                 <td>{{teamsdata.league}}</td>

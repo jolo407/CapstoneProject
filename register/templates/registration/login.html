@@ -5,10 +5,12 @@
 {% load crispy_forms_tags %} 
 
 {% block content %} 
-    <form method="post" class="form-group">
+    <form method="post" class="form-group" id="loginform">
+        <h1 style="font-family: 'Original Surfer', cursive;">Log In</h1>
+        <hr />
         {% csrf_token %} 
         {{ form|crispy }}
-        <p>Don't have an account? Create one <a href="/register">here</a></p>
-        <button type="submit" class="btn btn-success">Login</button>
+        <p style="font-family: 'Original Surfer', cursive;">Don't have an account? Create one <a href="/register">here</a></p>
+        <button type="submit" class="btn btn-primary" style="font-family: 'Original Surfer', cursive;">Login</button>
     </form>
     {% endblock content %}
